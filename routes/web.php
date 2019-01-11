@@ -14,6 +14,12 @@
 	Route::get('/', function () {
 	    return view('welcome');
 	});
+	Route::group(['middleware' => 'guest'], function () {
+		Route::post('/convertstring', [
+			'as' => 'convertstring',
+		    'uses' => 'WelcomeController@postConvertString',
+		]);
+    });
 /*
 	Route::get('/', [
 	    'as' => 'welcome',

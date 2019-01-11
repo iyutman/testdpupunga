@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Laravel</title>
 
@@ -84,11 +85,16 @@
 
             <div class="content">
 
-                <div class="form-group">
-                    <label for="string">Ketikan Bilang di sini</label>
-                    <input class="form-control" id="string-form" name="string">
+                <div >
+                    <label for="string">Ketikan Bilang di sini</label><br/>
+                    <textarea id="string-form" name="string"></textarea><br/>
+                    <button onclick="actionStringInput();"> go </button>
+                </div>
+                <div class="links">
+                    <p id="result"></p>
                 </div>
             </div>
         </div>
     </body>
 </html>
+<script src=" {{ URL::asset('js/apps.js') }}"></script>
